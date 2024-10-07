@@ -26,7 +26,7 @@ export default function Benefits() {
                   <p className="body-2 mb-6 text-n-3">{item.text}</p>
                   <div className="flex items-center mt-auto justify-between">
                     <img src={item.iconUrl} alt={item.title} />
-                    <div className="flex gap-1 items-center">
+                    <div className="flex md:gap-1 px-2 md:px-0 items-center">
                       <span className="uppercase text-n-1 tracking-wider font-bold font-code text-xs ">
                         explore more
                       </span>

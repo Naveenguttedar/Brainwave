@@ -1,4 +1,4 @@
-import { check2, grid, loading1 } from "../assets";
+import { check2, loading1 } from "../assets";
 import { roadmap } from "../constants";
 import Heading, { TagLine } from "./Heading";
 import Section from "./Section";
@@ -18,21 +18,20 @@ export default function Roadmap() {
             return (
               <div
                 key={item.id}
-                className={`lg:even:translate-y-[7rem] p-0.25 rounded-[2.5rem] ${item.colorful ? "bg-conic-gradient" : "border bg-6"}`}
+                className={`lg:even:translate-y-[7rem]  p-0.25 rounded-[2.5rem] ${item.colorful ? "bg-conic-gradient" : "border bg-6"}`}
               >
                 <div className="relative  p-8 bg-n-8 rounded-[2.4375rem] pb-24 xl:p-15 ">
-                  <div className="">
-                    <img className="w-full" src={grid} alt="Grid" />
-                  </div>
-                  <div className="absolute inset-8   ">
+                  <div className=" inset-8   ">
                     <div className="flex  items-center justify-between max-w-[27rem] mb-8  ">
                       <TagLine className={"  "}>{item.date}</TagLine>
-                      <div className="flex gap-1  items-center px-4 py-1  bg-n-1 rounded text-n-8">
+                      <div className="flex gap-1  items-center px-4  py-1  bg-n-1 rounded text-n-8">
                         <img
                           src={item.status === "done" ? check2 : loading1}
                           alt={status}
                         />
-                        <div className="tagline ">{status}</div>
+                        <div className="  tagline hidden md:block ">
+                          {status}
+                        </div>
                       </div>
                     </div>
                     <div className=" flex flex-col ">
@@ -43,7 +42,7 @@ export default function Roadmap() {
                         alt={item.title}
                       />
                       <div className="">
-                        <h4 className="h4 mb-4 ">{item.title}</h4>
+                        <h4 className="md:h4 md:mb-4 ">{item.title}</h4>
                         <p className="body-2  text-n-4">{item.text}</p>
                       </div>
                     </div>
